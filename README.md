@@ -1,5 +1,5 @@
 # ok-coral
-Make Coral comments for OK again!
+Make Coral comments OK again!
 
 Adds basic z-key functionality (does not automatically load comments though)
 
