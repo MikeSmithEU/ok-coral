@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OK Coral
 // @namespace    https://mikesmith.eu
-// @version      0.1
+// @version      0.2
 // @description  Make Coral comments for sbnation OK again!
 // @author       MikeSmithEU
 // @match        https://*.coral.coralproject.net/*
@@ -12,29 +12,36 @@
 (function() {
     'use strict';
 
-    var currentComments = [];
-
     function onKeyPress(evt) {
         var targetTag = evt.target.tagName.toLowerCase();
 
         // Ignore if in textarea or input
         if (targetTag === 'textarea' || targetTag === 'input' || evt.target.hasAttribute('contenteditable')) {
-            console.log('ignore');
             return;
         }
 
         // Enable z-key functionality
         if (evt.key.toLowerCase() == 'z') {
-            if (currentComments.length === 0) {
-                currentComments = Array.prototype.slice.call( document.getElementsByClassName('coral-comment-notSeen') );
+            // load all
+            var loadMores = document.getElementsByClassName('coral-loadMoreButton');
+            for (var loadMore of loadMores) {
+                loadMore.click();
             }
-            var nextComment = currentComments.shift();
-            console.log(nextComment);
+
+            var nextComment = document.getElementsByClassName('coral-comment-notSeen');
+            if (nextComment.length !== 0) {
+                nextComment = nextComment[0];
+            } else {
+                nextComment = undefined;
+            }
+
             if (nextComment !== undefined) {
                 nextComment.classList.remove('coral-comment-notSeen');
                 nextComment.scrollIntoView();
-                nextComment.style.transition = 'background-color 5s linear inherit';
+                nextComment.style.transition = 'background-color 8s';
+                nextComment.style.backgroundColor = 'inherit';
             }
+
         }
     }
     document.addEventListener('keypress', onKeyPress, true);

@@ -13,6 +13,4 @@ or [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tam
 ## Caveats
 
  - only works if current focus is in the comments (e.g. try to click an empty comment area first if it is not working)
- - does not automatically load new comments
- - possibly does not fully remove the styling of unread comments
  - only tested in FireFox
