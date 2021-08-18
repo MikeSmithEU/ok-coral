@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OK Coral
 // @namespace    https://mikesmith.eu
-// @version      0.3
+// @version      0.4
 // @description  Make Coral comments OK again!
 // @author       MikeSmithEU
 // @match        https://*.coral.coralproject.net/*
@@ -12,15 +12,18 @@
 (function() {
     'use strict';
 
+    function clickAll(qs) {
+        document.querySelectorAll(qs).forEach(function(el) {
+            el.click();
+        });
+    }
+
     // load all comments
     function loadAll() {
-        document.querySelectorAll('.coral-loadMoreButton').forEach(function(el) {
-            el.click();
-        });
-
-        document.querySelectorAll('.coral-replyList-showAllButton').forEach(function(el) {
-            el.click();
-        });
+        clickAll('.coral-loadAllButton');
+        clickAll('.coral-loadMoreButton');
+        clickAll('.coral-replyList-showAllButton');
+        clickAll('.coral-replyList-showMoreButton');
     }
 
     function markRead() {
