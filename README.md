@@ -1,7 +1,12 @@
 # ok-coral
 Make Coral comments OK again!
 
-Adds basic z-key functionality (does not automatically load comments though)
+Adds basic z-key functionality
+
+## Usage
+
+- Press 'z' to go to next comment and mark it as seen
+- Press 'A' to mark all comments as seen
 
 ## Installation 
 
