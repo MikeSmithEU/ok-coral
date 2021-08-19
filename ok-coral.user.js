@@ -35,7 +35,6 @@
     }
 
     function goToNextComment() {
-        console.log('gotonext');
         const nextComment = document.querySelector('.coral-comment-notSeen');
 
         if (!nextComment) {
