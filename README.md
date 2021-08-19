@@ -3,6 +3,8 @@ Make Coral comments OK again!
 
 Adds basic z-key functionality
 
+For mobile/tablets it also adds a 'Next Unread' button that appears on the right side.
+
 ## Usage
 
 - Press 'z' to go to next comment and mark it as seen
