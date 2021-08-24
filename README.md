@@ -20,4 +20,4 @@ or [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tam
 ## Caveats
 
  - only works if current focus is in the comments (e.g. try to click an empty comment area first if it is not working)
- - only tested in FireFox
+ - only tested in FireFox and Chrome
