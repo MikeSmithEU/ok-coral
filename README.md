@@ -13,7 +13,7 @@ For mobile/tablets it also adds a 'Next Unread' button that appears on the right
 ## Installation 
 
 - Install [Tampermonkey for Chrome](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
-or [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/).
+or [Tampermonkey for Firefox](https://addons.mozilla.org/en-US/firefox/addon/tampermonkey/), or visit the [Tampermonkey website](https://www.tampermonkey.net/) for any other browser...
 
 - Go to this [link](https://github.com/MikeSmithEU/ok-coral/raw/main/ok-coral.user.js), click "Install".
 
