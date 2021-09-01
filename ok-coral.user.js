@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OK Coral
 // @namespace    https://mikesmith.eu
-// @version      0.5
+// @version      0.6
 // @description  Make Coral comments OK again!
 // @author       MikeSmithEU
 // @match        https://*.coral.coralproject.net/*
@@ -11,6 +11,13 @@
 
 (function() {
     'use strict';
+
+    function insertStyle(css) {
+        var el = document.createElement("style");
+        el.type = "text/css";
+        el.innerText = css;
+        document.head.appendChild(el);
+    }
 
     function clickAll(qs) {
         document.querySelectorAll(qs).forEach(function(el) {
@@ -69,6 +76,24 @@
         }
     }
 
+    // When clicking a "in reply to [username]" username, go to the replied to comment
+    function onClick(ev) {
+        if (!ev.target.classList.contains("coral-comment-inReplyToUsername")) {
+            return false;
+        }
+
+        var parent = event.target.parentNode;
+        while (!parent.id.startsWith('coral-comments-replyList-log--')) {
+            parent = parent.parentNode;
+            if (parent.tagName.toLowerCase() != 'div') {
+                return false;
+            }
+        }
+
+        const id = 'comment-' + parent.id.slice(30);
+        document.getElementById(id).scrollIntoView();
+    }
+
     const userAgent = navigator.userAgent.toLowerCase();
     const isMobile = userAgent.includes('mobi') || userAgent.includes('tablet');
 
@@ -91,4 +116,6 @@
     setInterval(function() { loadAll(); }, 20000);
     setTimeout(function() { loadAll(); }, 1000);
     document.addEventListener('keypress', onKeyPress, true);
+    document.addEventListener('click', onClick, true);
+    insertStyle('.coral-comment-inReplyToUsername { cursor: pointer; }');
 })();
