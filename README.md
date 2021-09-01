@@ -1,7 +1,7 @@
 # ok-coral
 Make Coral comments OK again!
 
-Adds basic z-key functionality
+Adds basic z-key and "up" functionality
 
 For mobile/tablets it also adds a 'Next Unread' button that appears on the right side.
 
@@ -9,6 +9,7 @@ For mobile/tablets it also adds a 'Next Unread' button that appears on the right
 
 - Press 'z' to go to next comment and mark it as seen
 - Press 'A' to mark all comments as seen
+- Click the name of "in reply to [name]" to go to the original replied-to comment (this emulates the functionality of the "up" link)
 
 ## Installation 
 
