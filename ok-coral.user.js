@@ -5,7 +5,7 @@
 // @description  Make Coral comments OK again!
 // @author       MikeSmithEU
 // @match        https://*.coral.coralproject.net/*
-// @match        https://*.sbnation.com/embded/*
+// @match        https://*.sbnation.com/embed/*
 // @icon         https://www.google.com/s2/favicons?domain=sbnation.com
 // @grant        GM_addStyle
 // ==/UserScript==
