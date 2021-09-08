@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         OK Coral
 // @namespace    https://mikesmith.eu
-// @version      0.6
+// @version      0.7
 // @description  Make Coral comments OK again!
 // @author       MikeSmithEU
 // @match        https://*.coral.coralproject.net/*
